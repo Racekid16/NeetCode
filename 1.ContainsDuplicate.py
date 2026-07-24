@@ -10,3 +10,4 @@ class Solution:
 if __name__ == "__main__":
     nums = [int(x) for x in sys.argv[1:]]
     print(Solution().hasDuplicate(nums))
+
