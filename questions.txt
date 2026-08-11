@@ -127,6 +127,6 @@
 145.set_matrix_zeroes_question.md,https://neetcode.io/problems/set-zeroes-in-matrix/question?list=neetcode150
 146.non-cylical_number_question.md,https://neetcode.io/problems/non-cyclical-number/question?list=neetcode150
 147.plus_one_question.md,https://neetcode.io/problems/plus-one/question?list=neetcode150
-148.powx,n_question.md,https://neetcode.io/problems/pow-x-n/question?list=neetcode150
+148.pow_x_n_question.md,https://neetcode.io/problems/pow-x-n/question?list=neetcode150
 149.multiply_strings_question.md,https://neetcode.io/problems/multiply-strings/question?list=neetcode150
 150.detect_squares_question.md,https://neetcode.io/problems/count-squares/question?list=neetcode150
