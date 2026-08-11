@@ -1,28 +1,15 @@
 #!/usr/bin/env node
-// generate-neetcode-questions.mjs
-//
-// Pulls problem metadata from NeetCode's API for a list of problems, PARSES
-// each one into a plain data object, then RENDERS that object through a
-// template — like React: parse() builds the data, render() is a pure
-// function from data -> markdown string.
-//
-// Auth: reads your token from a file named token.txt in the current
-// directory (just the raw token, no quotes, trailing newline is fine).
-//
-// Questions file format: one problem per line, "<filename>,<url>" —
-//   - <filename> is the name of the file to write for this problem
-//     (written to the current directory).
-//   - <url> is the problem's NeetCode question-page URL, e.g.
-//     https://neetcode.io/problems/car-fleet/question?list=neetcode150
-//     The problemId used to call the API is parsed out of this URL
-//     (the path segment right after "/problems/").
-// Blank lines are ignored. Example line:
-//   019.car_fleet_question.md,https://neetcode.io/problems/car-fleet/question?list=neetcode150
-//
-// Usage:
-//   node generate-neetcode-questions.mjs questions.txt
-//
-// Requires Node 18+ (built-in fetch).
+/*
+Fetches problem metadata from NeetCode's API, parses each one into a plain data object, then renders that object through a template.
+Output filenames are derived, not read from the links file. Files are written to the current directory.
+
+Usage: generate-neetcode-questions.mjs <links.txt>
+  <links.txt> format: one NeetCode question-page URL per line, e.g. https://neetcode.io/problems/car-fleet/question?list=neetcode150
+
+Note: requires an auth token, which the script reads from a file named token.txt in the current directory.
+
+Written with the help of Claude.
+*/
 
 import fs from "node:fs";
 
@@ -34,7 +21,7 @@ if (!TOKEN) {
 
 const inputFile = process.argv[2];
 if (!inputFile) {
-  console.error("Usage: node generate-neetcode-questions.mjs <questions-file>");
+  console.error("Usage: node generate-neetcode-questions.mjs <links-file>");
   process.exit(1);
 }
 const DELAY_MS = 1000; // be polite to the API
@@ -155,13 +142,14 @@ function parseBody(body) {
 
   const examples = [];
   const exampleRe =
-    /\*\*Example \d+:?\*\*\s*```\s*Input:\s*([\s\S]*?)\n\s*Output:\s*([\s\S]*?)\s*```\s*([\s\S]*?)(?=\*\*Example \d+:?\*\*|$)/g;
+    /\*\*Example \d+:?\*\*\s*(?:!\[[^\]]*\]\(([^)]*)\)\s*)?```\s*Input:\s*([\s\S]*?)\n\s*Output:\s*([\s\S]*?)\s*```\s*([\s\S]*?)(?=\*\*Example \d+:?\*\*|$)/g;
   let m;
   while ((m = exampleRe.exec(examplesBlock))) {
     examples.push({
-      input: m[1].trim(),
-      output: m[2].trim(),
-      explanation: tidyBlankLines(m[3]),
+      image: m[1] || "",
+      input: m[2].trim(),
+      output: m[3].trim(),
+      explanation: tidyBlankLines(m[4]),
     });
   }
 
@@ -213,7 +201,10 @@ function parseProblem({ url, name, difficulty, description }) {
 function render({ url, name, difficulty, intro, examples, constraints, topics, recommendedComplexity, hints }) {
   const examplesSection = examples
     .map((ex, i) => {
-      const fence = `**Example ${i + 1}**\n\`\`\`\nInput: ${ex.input}\nOutput: ${ex.output}\n\`\`\``;
+      const header = `**Example ${i + 1}**`;
+      const image = ex.image ? `![](${ex.image})` : "";
+      const codeBlock = `\`\`\`\nInput: ${ex.input}\nOutput: ${ex.output}\n\`\`\``;
+      const fence = [header, image, codeBlock].filter(Boolean).join("\n\n");
       return ex.explanation ? `${fence}\n\n${ex.explanation}` : fence;
     })
     .join("\n\n");
@@ -235,6 +226,16 @@ function render({ url, name, difficulty, intro, examples, constraints, topics, r
   );
 }
 
+// resJSON.data.name, lowercased/underscored/stripped for use as a filename.
+// e.g. "Pow(x, n)" -> "powx_n"
+function processName(name) {
+  return name
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, "_")
+    .replace(/[^a-z0-9_]/g, "");
+}
+
 // ===========================================================================
 // main
 // ===========================================================================
@@ -242,22 +243,22 @@ function render({ url, name, difficulty, intro, examples, constraints, topics, r
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function main() {
-  const lines = fs
+  const urls = fs
     .readFileSync(inputFile, "utf8")
     .split("\n")
     .map((l) => l.trim())
     .filter(Boolean);
 
-  for (const line of lines) {
-    const commaIndex = line.indexOf(",");
-    const filename = line.slice(0, commaIndex);
-    const url = line.slice(commaIndex + 1);
+  for (let i = 0; i < urls.length; i++) {
+    const url = urls[i];
+    const number = String(i + 1).padStart(3, "0");
     const problemId = problemIdFromUrl(url);
 
-    console.log(`Fetching ${problemId} -> ${filename}`);
+    console.log(`Fetching ${problemId} (${number})`);
     try {
       const data = await fetchProblem(problemId);
       const parsed = parseProblem({ url, name: data.name, difficulty: data.difficulty, description: data.description });
+      const filename = `${number}.${processName(data.name)}_question.md`;
       fs.writeFileSync(filename, render(parsed), "utf8");
     } catch (err) {
       console.error(`Failed on ${problemId}: ${err.message}`);
