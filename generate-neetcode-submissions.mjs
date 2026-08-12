@@ -88,7 +88,6 @@ async function main() {
     console.log(`Fetching ${problemId} (${number})`);
     try {
       const data = await fetchProblem(problemId);
-      console.log(data);
       const submission = lastAcceptedSubmission(data.submissionHistory);
       if (!submission) {
         console.log(`  No accepted submission for ${problemId}, skipping.`);
