@@ -1,0 +1,14 @@
+[
+  {
+    "input": {
+      "root": [1, 2, 3, null, null, 4]
+    },
+    "output": 3
+  },
+  {
+    "input": {
+      "root": []
+    },
+    "output": 0
+  }
+]

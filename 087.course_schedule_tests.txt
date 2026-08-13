@@ -1,0 +1,16 @@
+[
+  {
+    "input": {
+      "numCourses": 2,
+      "prerequisites": [[0, 1]]
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "numCourses": 2,
+      "prerequisites": [[0, 1], [1, 0]]
+    },
+    "output": false
+  }
+]

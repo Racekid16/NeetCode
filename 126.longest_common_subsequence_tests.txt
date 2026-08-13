@@ -1,0 +1,23 @@
+[
+  {
+    "input": {
+      "text1": "crabt",
+      "text2": "cat"
+    },
+    "output": 3
+  },
+  {
+    "input": {
+      "text1": "abcd",
+      "text2": "abcd"
+    },
+    "output": 4
+  },
+  {
+    "input": {
+      "text1": "abcd",
+      "text2": "efgh"
+    },
+    "output": 0
+  }
+]

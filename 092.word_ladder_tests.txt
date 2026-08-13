@@ -1,0 +1,18 @@
+[
+  {
+    "input": {
+      "beginWord": "cat",
+      "endWord": "sag",
+      "wordList": ["bat", "bag", "sag", "dag", "dot"]
+    },
+    "output": 4
+  },
+  {
+    "input": {
+      "beginWord": "cat",
+      "endWord": "sag",
+      "wordList": ["bat", "bag", "sat", "dag", "dot"]
+    },
+    "output": 0
+  }
+]

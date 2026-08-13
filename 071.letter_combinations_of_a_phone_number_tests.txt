@@ -1,0 +1,14 @@
+[
+  {
+    "input": {
+      "digits": "34"
+    },
+    "output": ["dg", "dh", "di", "eg", "eh", "ei", "fg", "fh", "fi"]
+  },
+  {
+    "input": {
+      "digits": ""
+    },
+    "output": []
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "input": {
+      "s": "abc"
+    },
+    "output": 3
+  },
+  {
+    "input": {
+      "s": "aaa"
+    },
+    "output": 6
+  }
+]

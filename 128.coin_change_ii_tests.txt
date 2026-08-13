@@ -1,0 +1,16 @@
+[
+  {
+    "input": {
+      "amount": 4,
+      "coins": [1, 2, 3]
+    },
+    "output": 4
+  },
+  {
+    "input": {
+      "amount": 7,
+      "coins": [2, 4]
+    },
+    "output": 0
+  }
+]

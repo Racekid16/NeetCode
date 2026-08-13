@@ -1,0 +1,16 @@
+[
+  {
+    "input": {
+      "word1": "monkeys",
+      "word2": "money"
+    },
+    "output": 2
+  },
+  {
+    "input": {
+      "word1": "neatcdee",
+      "word2": "neetcode"
+    },
+    "output": 3
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "input": {
+      "board": [["A", "B", "C", "D"], ["S", "A", "A", "T"], ["A", "C", "A", "E"]],
+      "word": "CAT"
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "board": [["A", "B", "C", "D"], ["S", "A", "A", "T"], ["A", "C", "A", "E"]],
+      "word": "BAT"
+    },
+    "output": false
+  }
+]

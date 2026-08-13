@@ -1,0 +1,23 @@
+[
+  {
+    "input": {
+      "s": "aa",
+      "p": ".b"
+    },
+    "output": false
+  },
+  {
+    "input": {
+      "s": "nnn",
+      "p": "n*"
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "s": "xyz",
+      "p": ".*z"
+    },
+    "output": true
+  }
+]

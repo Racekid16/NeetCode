@@ -1,0 +1,16 @@
+[
+  {
+    "input": {
+      "s": "caaat",
+      "t": "cat"
+    },
+    "output": 3
+  },
+  {
+    "input": {
+      "s": "xxyxy",
+      "t": "xy"
+    },
+    "output": 5
+  }
+]

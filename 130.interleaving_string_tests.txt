@@ -1,0 +1,26 @@
+[
+  {
+    "input": {
+      "s1": "aaaa",
+      "s2": "bbbb",
+      "s3": "aabbbbaa"
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "s1": "",
+      "s2": "",
+      "s3": ""
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "s1": "abc",
+      "s2": "xyz",
+      "s3": "abxzcy"
+    },
+    "output": false
+  }
+]

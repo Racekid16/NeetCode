@@ -1,0 +1,6 @@
+[
+  {
+    "input": ["PrefixTree", "insert", "apple", "search", "apple", "search", "app", "startsWith", "app", "insert", "app", "search", "app"],
+    "output": [null, null, true, false, true, null, true]
+  }
+]

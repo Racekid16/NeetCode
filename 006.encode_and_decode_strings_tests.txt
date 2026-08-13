@@ -1,0 +1,14 @@
+[
+  {
+    "input": {
+      "strs": ["Hello", "World"]
+    },
+    "output": ["Hello", "World"]
+  },
+  {
+    "input": {
+      "strs": [""]
+    },
+    "output": [""]
+  }
+]

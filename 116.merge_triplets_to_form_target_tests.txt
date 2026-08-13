@@ -1,0 +1,16 @@
+[
+  {
+    "input": {
+      "triplets": [[1, 2, 3], [7, 1, 1]],
+      "target": [7, 2, 3]
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "triplets": [[2, 5, 6], [1, 4, 4], [5, 7, 5]],
+      "target": [5, 4, 6]
+    },
+    "output": false
+  }
+]

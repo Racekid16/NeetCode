@@ -1,0 +1,18 @@
+[
+  {
+    "input": {
+      "target": 10,
+      "position": [1, 4],
+      "speed": [3, 2]
+    },
+    "output": 1
+  },
+  {
+    "input": {
+      "target": 10,
+      "position": [4, 1, 0, 7],
+      "speed": [2, 2, 1, 1]
+    },
+    "output": 3
+  }
+]

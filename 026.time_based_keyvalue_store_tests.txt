@@ -1,0 +1,6 @@
+[
+  {
+    "input": ["TimeMap", "set", ["alice", "happy", 1], "get", ["alice", 1], "get", ["alice", 2], "set", ["alice", "sad", 3], "get", ["alice", 3]],
+    "output": [null, null, "happy", "happy", null, "sad"]
+  }
+]

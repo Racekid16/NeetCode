@@ -1,0 +1,23 @@
+[
+  {
+    "input": {
+      "s": "neetcode",
+      "wordDict": ["neet", "code"]
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "s": "applepenapple",
+      "wordDict": ["apple", "pen", "ape"]
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "s": "catsincars",
+      "wordDict": ["cats", "cat", "sin", "in", "car"]
+    },
+    "output": false
+  }
+]

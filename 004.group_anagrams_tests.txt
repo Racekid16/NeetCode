@@ -1,0 +1,20 @@
+[
+  {
+    "input": {
+      "strs": ["act", "pots", "tops", "cat", "stop", "hat"]
+    },
+    "output": [["hat"], ["act", "cat"], ["stop", "pots", "tops"]]
+  },
+  {
+    "input": {
+      "strs": ["x"]
+    },
+    "output": [["x"]]
+  },
+  {
+    "input": {
+      "strs": [""]
+    },
+    "output": [[""]]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "input": {
+      "s": "zxyzxyz"
+    },
+    "output": 3
+  },
+  {
+    "input": {
+      "s": "xxxx"
+    },
+    "output": 1
+  }
+]

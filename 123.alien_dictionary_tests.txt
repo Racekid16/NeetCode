@@ -1,0 +1,20 @@
+[
+  {
+    "input": {
+      "words": ["z", "o"]
+    },
+    "output": "zo"
+  },
+  {
+    "input": {
+      "words": ["hrn", "hrf", "er", "enn", "rfnn"]
+    },
+    "output": "hernf"
+  },
+  {
+    "input": {
+      "words": ["abc", "ab"]
+    },
+    "output": ""
+  }
+]

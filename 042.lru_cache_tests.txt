@@ -1,0 +1,6 @@
+[
+  {
+    "input": ["LRUCache", [2], "put", [1, 10], "get", [1], "put", [2, 20], "put", [3, 30], "get", [2], "get", [1]],
+    "output": [null, null, 10, null, null, 20, -1]
+  }
+]

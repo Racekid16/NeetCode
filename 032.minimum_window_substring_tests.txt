@@ -1,0 +1,23 @@
+[
+  {
+    "input": {
+      "s": "OUZODYXAZV",
+      "t": "XYZ"
+    },
+    "output": "YXAZ"
+  },
+  {
+    "input": {
+      "s": "xyz",
+      "t": "xyz"
+    },
+    "output": "xyz"
+  },
+  {
+    "input": {
+      "s": "x",
+      "t": "xy"
+    },
+    "output": ""
+  }
+]

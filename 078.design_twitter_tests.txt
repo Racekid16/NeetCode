@@ -1,0 +1,6 @@
+[
+  {
+    "input": ["Twitter", "postTweet", [1, 10], "postTweet", [2, 20], "getNewsFeed", [1], "getNewsFeed", [2], "follow", [1, 2], "getNewsFeed", [1], "getNewsFeed", [2], "unfollow", [1, 2], "getNewsFeed", [1]],
+    "output": [null, null, null, [10], [20], null, [20, 10], [20], null, [10]]
+  }
+]

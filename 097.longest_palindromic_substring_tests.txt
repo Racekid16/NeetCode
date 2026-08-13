@@ -1,0 +1,14 @@
+[
+  {
+    "input": {
+      "s": "ababd"
+    },
+    "output": "bab"
+  },
+  {
+    "input": {
+      "s": "abbc"
+    },
+    "output": "bb"
+  }
+]

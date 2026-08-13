@@ -1,0 +1,6 @@
+[
+  {
+    "input": ["WordDictionary", "addWord", "addWord", "addWord", "search", "search", "search", "\"search\"]\n[[]", ["day"], ["bay"], ["may"], ["say"], ["day"], [".ay"], ["b.."]],
+    "output": [null, null, null, null, false, true, true, true]
+  }
+]

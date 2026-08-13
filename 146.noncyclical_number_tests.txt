@@ -1,0 +1,14 @@
+[
+  {
+    "input": {
+      "n": 100
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "n": 101
+    },
+    "output": false
+  }
+]

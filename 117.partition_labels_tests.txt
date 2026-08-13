@@ -1,0 +1,14 @@
+[
+  {
+    "input": {
+      "s": "xyxxyzbzbbisl"
+    },
+    "output": [5, 5, 1, 1, 1]
+  },
+  {
+    "input": {
+      "s": "abcabc"
+    },
+    "output": [6]
+  }
+]

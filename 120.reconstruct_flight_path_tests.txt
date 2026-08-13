@@ -1,0 +1,14 @@
+[
+  {
+    "input": {
+      "tickets": [["BUF", "HOU"], ["HOU", "SEA"], ["JFK", "BUF"]]
+    },
+    "output": ["JFK", "BUF", "HOU", "SEA"]
+  },
+  {
+    "input": {
+      "tickets": [["HOU", "JFK"], ["SEA", "JFK"], ["JFK", "SEA"], ["JFK", "HOU"]]
+    },
+    "output": ["JFK", "HOU", "JFK", "SEA", "JFK"]
+  }
+]

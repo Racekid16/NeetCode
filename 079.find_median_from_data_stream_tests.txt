@@ -1,0 +1,6 @@
+[
+  {
+    "input": ["MedianFinder", "addNum", "1", "findMedian", "addNum", "2", "findMedian", "addNum", "3", "findMedian"],
+    "output": [null, null, 1, null, 2, null, 2]
+  }
+]

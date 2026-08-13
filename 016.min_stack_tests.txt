@@ -1,0 +1,6 @@
+[
+  {
+    "input": ["MinStack", "push", 1, "push", 2, "push", 0, "getMin", "pop", "top", "getMin"],
+    "output": [null, null, null, null, 0, null, 2, 1]
+  }
+]

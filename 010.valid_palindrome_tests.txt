@@ -1,0 +1,14 @@
+[
+  {
+    "input": {
+      "s": "Was it a car or a cat I saw?"
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "s": "tab a cat"
+    },
+    "output": false
+  }
+]
